@@ -1,17 +1,104 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>
+            Cotización
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-card>
+                    <ion-card-content>
+                        <form [formGroup]="cotiForm">
+                            <!--empresa-->
+                            <ion-item lines="none">
+                                <ion-icon name="business-outline" item-start></ion-icon>
+                                <ion-label stacked>Empresa:</ion-label>
+                                <ion-input formControlName="business" type="text" placeholder="Empresa..."></ion-input>
+                            </ion-item>
+                            <!--fecha-->
+                            <ion-item lines="none">
+                                <ion-icon name="calendar-outline"></ion-icon>
+                                Fecha:
+                                <ion-datetime displayFormat="MM/DD/YYYY" formControlName="date"
+                                              min="2020-01-01"
+                                              max="2050-12-09" placeholder="MM/DD/YYYY"></ion-datetime>
+                            </ion-item>
+                            <!--Detalle Items cotizacion-->
+                            <ion-item lines="none">
+                                <ion-icon name="cart-outline"></ion-icon>
+                                <ion-label position="fixed">Detalle Gloza</ion-label>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label position="fixed">Detalle:</ion-label>
+                                <ion-input formControlName="detail1"
+                                           type="text" placeholder="Detalle..."></ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label position="fixed">Tiempo:</ion-label>
+                                <ion-input formControlName="time1"
+                                           type="text" placeholder="Tiempo..."></ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label position="fixed">Precio:</ion-label>
+                                <ion-input formControlName="price1"
+                                           type="text" placeholder="Precio..."></ion-input>
+                            </ion-item>
+                            <ion-item>
+                                Agregar detalle
+                                <ion-icon (click)="addDetail()" name="add-circle-outline"></ion-icon>
+                            </ion-item>
+
+                            <!--impuesto-->
+                            <ion-item>
+                                <ion-icon name="leaf-outline"></ion-icon>
+                                <ion-label position="fixed">Impuesto:</ion-label>
+                                <ion-checkbox color="light" formControlName="tax"></ion-checkbox>
+                            </ion-item>
+                            <!--Descripcion del proyecto-->
+                            <ion-item lines="none">
+                                <ion-icon name="reader-outline"></ion-icon>
+                                Descripción del proyecto:
+                            </ion-item>
+                            <ion-item lines="none">
+                                <ion-textarea placeholder="Descripción..." formControlName="projectDetail"></ion-textarea>
+                            </ion-item>
+                            <!--Terminos-->
+                            <ion-item lines="none">
+                                <ion-icon name="list-outline"></ion-icon>
+                                <ion-label position="fixed">Terminos:</ion-label>
+                            </ion-item>
+                            <ion-item lines="none">
+                                <ion-input placeholder="1er Punto..." formControlName="terms"
+                                           type="text"></ion-input>
+                                <ion-icon name="add"></ion-icon>
+                            </ion-item>
+                            <!--Para iniciar proyecto-->
+                            <ion-item lines="none">
+                                <ion-icon name="golf-outline"></ion-icon>
+                                Para iniciar proyecto:
+                            </ion-item>
+                            <ion-item lines="none">
+                                <ion-input placeholder="1er Punto..." formControlName="initial"
+                                           type="text"></ion-input>
+                                <ion-icon name="add"></ion-icon>
+                            </ion-item>
+                            <ion-row>
+                                <ion-col offset-lg=10 size-lg="2">
+                                    <ion-button style="width: 100%" class="submit" color="primary" type="submit">Crear
+                                        Cotización
+                                    </ion-button>
+                                </ion-col>
+                            </ion-row>
+                        </form>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <!--prueba primer commit-->
 </ion-content>
