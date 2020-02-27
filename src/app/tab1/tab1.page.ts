@@ -7,17 +7,17 @@ import {FormGroup, FormControl, Validators} from '@angular/forms';
     styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-    private cotiForm: FormGroup;
+    private quoteForm: FormGroup;
 
     constructor() {
-        this.cotiForm = new FormGroup({
+        this.quoteForm = new FormGroup({
             business: new FormControl('', [Validators.required]),
             date: new FormControl('', [Validators.required]),
             detail1: new FormControl('', [Validators.required]),
             time1: new FormControl('', [Validators.required]),
             price1: new FormControl('', [Validators.required]),
             tax: new FormControl('', [Validators.required]),
-            projectDetail: new FormControl('', [Validators.required]),
+            projectDescription: new FormControl('', [Validators.required]),
             terms: new FormControl('', [Validators.required]),
             initial: new FormControl('', [Validators.required])
         });
