@@ -24,9 +24,7 @@ export class Tab1Page {
 
     }
 
-    addDetail(){
-alert('agregamos nuevo detalle');
-
-
+    addDetail() {
+        alert('agregamos nuevo detalle');
     }
 }

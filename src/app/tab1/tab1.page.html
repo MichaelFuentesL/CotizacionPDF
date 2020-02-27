@@ -50,7 +50,10 @@
                             </ion-item>
                             <ion-item>
                                 Agregar detalle
-                                <ion-icon (click)="addDetail()" name="add-circle-outline"></ion-icon>
+                                <button item-rigth clear (click)='addDetail($event)' >
+                                    <ion-icon name="add-circle-outline"></ion-icon>
+                                </button>
+
                             </ion-item>
 
                             <!--impuesto-->
@@ -72,7 +75,7 @@
                                 <ion-icon name="list-outline"></ion-icon>
                                 <ion-label position="fixed">Terminos:</ion-label>
                             </ion-item>
-                            <ion-item lines="none">
+                            <ion-item lines="none" *ngFor="let term of terms">
                                 <ion-input placeholder="1er Punto..." formControlName="terms"
                                            type="text"></ion-input>
                                 <ion-icon name="add"></ion-icon>
@@ -100,5 +103,4 @@
             </ion-col>
         </ion-row>
     </ion-grid>
-    <!--PRIMER COMMITT-->
 </ion-content>
