@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
     <ion-toolbar>
         <ion-title>
-            Bill
+            <p>BILL</p>
         </ion-title>
     </ion-toolbar>
 </ion-header>
@@ -13,23 +13,65 @@
                 <ion-card>
                     <ion-card-content>
                         <ion-item>
-                            Create bill
+                            <p>CREATE BILL</p>
                         </ion-item>
-                        <form [formGroup]="quoteForm">
-                            <!--business-->
+                        <form [formGroup]="billForm">
+                            <!--Date-->
                             <ion-item>
-                                <ion-icon name="calendar-outline"></ion-icon>
-                                <ion-label stacked>Date of issue:</ion-label>
-                                <ion-input formControlName="business" type="text" placeholder="Business..."></ion-input>
+                                <ion-grid>
+                                    <ion-row>
+                                        <ion-col>
+                                            <ion-label position="fixed">Date of issue</ion-label>
+                                        </ion-col>
+                                        <ion-col>
+                                            <ion-datetime displayFormat="MM/DD/YYYY" formControlName="dateCreate"
+                                                          min="2020-01-01"
+                                                          max="2050-12-09" placeholder="MM/DD/YYYY"></ion-datetime>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
                             </ion-item>
-                            <!--date-->
+
+                            <!--Name-->
                             <ion-item>
-                                <ion-icon name="calendar-outline"></ion-icon>
-                                Date:
-                                <ion-datetime displayFormat="MM/DD/YYYY" formControlName="date"
-                                              min="2020-01-01"
-                                              max="2050-12-09" placeholder="MM/DD/YYYY"></ion-datetime>
+                                <ion-grid>
+                                    <ion-row>
+                                        <ion-col>
+                                            <ion-label position="fixed">Name:</ion-label>
+                                        </ion-col>
+                                        <ion-col>
+                                            <ion-input formControlName="nameBusiness"
+                                                       type="text" placeholder="Name..."></ion-input>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
                             </ion-item>
+
+                            <ion-item>
+                                <ion-grid>
+                                    <ion-row>
+                                        <ion-col>
+                                            <ion-label position="fixed">COMPANY DATA</ion-label>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
+                            </ion-item>
+
+                            <!--Activity-->
+                            <ion-item>
+                                <ion-grid>
+                                    <ion-row>
+                                        <ion-col>
+                                            <ion-label position="fixed">Activity</ion-label>
+                                        </ion-col>
+                                        <ion-col>
+                                            <ion-input formControlName="activityBusiness"
+                                                       type="text" placeholder="Activity..."></ion-input>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
+                            </ion-item>
+
                             <!--service detail-->
                             <ion-item lines="none">
                                 <ion-icon name="cart-outline"></ion-icon>
@@ -38,18 +80,29 @@
                             </ion-item>
                             <ion-item lines="none">
                                 <ion-label position="fixed">Detail:</ion-label>
-                                <ion-input formControlName="detail1"
+                                <ion-input formControlName="detail"
                                            type="text" placeholder="Detail..."></ion-input>
                             </ion-item>
-                            <ion-item lines="none">
-                                <ion-label position="fixed">Time:</ion-label>
-                                <ion-input formControlName="time1"
-                                           type="text" placeholder="Time..."></ion-input>
+                            <ion-item color="secondary">
+                                INVOICE FOR
                             </ion-item>
+                            <!--Name-->
+                            <ion-item>
+                                <ion-label position="fixed">Name:</ion-label>
+                                <ion-input formControlName="activityCustomer"
+                                           type="text" placeholder="Name..."></ion-input>
+                            </ion-item>
+                            <!--Activity-->
+                            <ion-item>
+                                <ion-label position="fixed">Activity:</ion-label>
+                                <ion-input formControlName="activityCustomer"
+                                           type="text" placeholder="Activity..."></ion-input>
+                            </ion-item>
+                            <!--tax id-->
                             <ion-item lines="none">
-                                <ion-label position="fixed">Price:</ion-label>
-                                <ion-input formControlName="price1"
-                                           type="text" placeholder="Price..."></ion-input>
+                                <ion-label position="fixed">Tax ID:</ion-label>
+                                <ion-input formControlName="taxId"
+                                           type="text" placeholder="Tax ID..."></ion-input>
                             </ion-item>
                             <ion-item>
                                 Add new service
